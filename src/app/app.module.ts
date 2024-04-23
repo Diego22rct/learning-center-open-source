@@ -10,13 +10,18 @@ import { HomeComponent } from './public/pages/home/home.component';
 import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
+import { StudentsComponent } from './learning/pages/students/students.component';
+import {MatPaginator} from "@angular/material/paginator";
+import {MatCellDef, MatHeaderCellDef, MatHeaderRowDef, MatRowDef, MatTable} from "@angular/material/table";
+import {MatIcon} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +29,13 @@ import {MatButtonModule} from "@angular/material/button";
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
+    MatPaginator,
+    MatTable,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatIcon,
+    MatHeaderRowDef,
+    MatRowDef,
   ],
   providers: [
     provideAnimationsAsync()
