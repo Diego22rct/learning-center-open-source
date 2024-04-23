@@ -1,27 +1,36 @@
-# LearningCenter
+# ACME Learning Center Web Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+## Summary
+ACME Learning Center Application, illustrating CRUD behavior and in-app navigation, with Angular Material and Angular Router. It also uses a JSON Server Fake API.
 
-## Development server
+## Features
+- Material Design
+- JSON Server Fake API
+- CRUD operations
+- In-app navigation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Dependencies
+- Angular Material
+- Angular Router
+- JSON Server
+- HttpClient
+- Reactive Forms
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Commands
+```
+> ng new learning-center --no-standalone --routing
+> ng add @angular/material
+> ng generate environments
+> ng g s shared/services/Base
+> ng g class learning/model/Student
+> ng g s learning/services/Students
+> ng g c public/pages/About
+> ng g c public/pages/Home
+> ng g c public/pages/PageNotFound
+> ng g c learning/pages/Students
+> ng g c learning/components/StudentForm
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> npm i -g json-server@0.17.4
+> json-server --watch db.json --routes routes.json
+```
