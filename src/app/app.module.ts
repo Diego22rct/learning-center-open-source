@@ -4,16 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import { AboutComponent } from './public/pages/about/about.component';
 import { HomeComponent } from './public/pages/home/home.component';
 import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
-import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatIconModule} from "@angular/material/icon";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatCardModule} from "@angular/material/card";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {StudentsService} from "./learning/services/students.service";
 import { StudentsComponent } from './learning/pages/students/students.component';
-import {MatPaginator} from "@angular/material/paginator";
-import {MatCellDef, MatHeaderCellDef, MatHeaderRowDef, MatRowDef, MatTable} from "@angular/material/table";
-import {MatIcon} from "@angular/material/icon";
+import { StudentFormComponent } from './learning/components/student-form/student-form.component';
 
 @NgModule({
   declarations: [
@@ -21,24 +29,29 @@ import {MatIcon} from "@angular/material/icon";
     AboutComponent,
     HomeComponent,
     PageNotFoundComponent,
-    StudentsComponent
+    StudentsComponent,
+    StudentFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     HttpClientModule,
-    MatToolbarModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
-    MatPaginator,
-    MatTable,
-    MatHeaderCellDef,
-    MatCellDef,
-    MatIcon,
-    MatHeaderRowDef,
-    MatRowDef,
+    MatTableModule,
+    MatSortModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    StudentsService
   ],
   bootstrap: [AppComponent]
 })
